@@ -1,0 +1,11 @@
+CREATE DATABASE CRUD_challenge;
+
+USE CRUD_challenge;
+
+CREATE TABLE users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    keepConnected BOOL DEFAULT 0,
+    password VARCHAR(6) NOT NULL
+);

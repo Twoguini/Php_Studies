@@ -1,0 +1,18 @@
+{
+    "name": "twoguini/crud-challenge",
+    "description": "Studying php",
+    "autoload": {
+        "psr-4": {
+            "Twoguini\\CrudChallenge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Guilherme Comunian",
+            "email": "twoguini@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
