@@ -17,8 +17,6 @@ class UserModel {
     return $this->db->query("SELECT * FROM users WHERE id = $id");
   }
 
-  // TODO keep connected will aways change?
-
   public function update($id, $name=null, $email=null, $keepConnected=null, $password=null) {
     $columnsSelectionArr = [];
     $columnValueDefArr = [];
