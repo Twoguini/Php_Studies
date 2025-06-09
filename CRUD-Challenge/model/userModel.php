@@ -9,6 +9,7 @@ class UserModel {
   }
 
   public function create($name, $email, $keepConnected, $password) {
+    $keepConnected = (int)$keepConnected;
     $this->db->query("INSERT INTO users (name, email, keepConnected, password) values ('$name', '$email', $keepConnected, '$password')");
   }
   
@@ -16,7 +17,9 @@ class UserModel {
     return $this->db->query("SELECT * FROM users WHERE id = $id");
   }
 
-  public function update($id, $name=null, $email=null, $keepConnected=false, $password=null) {
+  // TODO keep connected will aways change?
+
+  public function update($id, $name=null, $email=null, $keepConnected=null, $password=null) {
     $columnsSelectionArr = [];
     $columnValueDefArr = [];
 
@@ -26,16 +29,20 @@ class UserModel {
       $columnsSelectionArr[] = "email";
     }if(!is_null($password)) {
       $columnsSelectionArr[] = "password";
+    }if(!is_null($keepConnected)) {
+      $keepConnected = (int)$keepConnected;
+      $columnsSelectionArr[] = "keepConnected";
     }
 
     foreach($columnsSelectionArr as $column) {
       $columnValueDefArr[] = "$column = ". "'".$$column ."'";
     }
+    echo "UPDATE users SET ". implode(", ", $columnValueDefArr) ." WHERE id=$id";
 
     $this->db->query("UPDATE users SET ". implode(", ", $columnValueDefArr) ." WHERE id=$id");
   }
   
-  /*public function delete($id) {
-
-  }*/
+  public function delete($id) {
+    $this->db->query("DELETE FROM users WHERE id=$id");
+  }
 }

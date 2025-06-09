@@ -12,4 +12,5 @@ foreach ($result as $row) {
     echo " Name = " . $row['name'] . "\n";
 }*/
 
-$dataBase->update(1, "Gileme", "blablabla@,.com", password:"456546");
+//$dataBase->update(2, "Gileme", "blablabla@,.com", password:"456546");
+//$dataBase->delete(1);
