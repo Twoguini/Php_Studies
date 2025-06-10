@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sing Up</title>
+  <?php
+    if($_POST) {
+      include_once "../controller/userController.php"; 
+      createUser();
+    }
+  ?>
 </head>
 <body>
   <h1>Sing Up</h1>
@@ -12,9 +18,9 @@
     <input type="text" name="name" id="name">
     <label for="email">Email</label>
     <input type="email" name="email" id="email">
-    <label for="">Keep Connected</label>
+    <label for="keepConnected">Keep Connected</label>
     <input type="checkbox" name="keepConnected" id="keepConnected">
-    <label for="">Password</label>
+    <label for="pass">Password</label>
     <input type="password" name="pass" id="pass">
     <input type="submit" value="Submit">
   </form>

@@ -13,7 +13,7 @@ class dbconnect {
 
     $db = mysqli_connect($host, $user, $pass, $targetDb);
     if($db->connect_errno) {
-      echo "Falha ao conectar : (" . $db->connect_errno . ") " . $db->connect_erro;
+      die("Falha ao conectar : (" . $db->connect_errno . ") " . $db->connect_erro);
       return;
     } else {
       return $db;
