@@ -21,3 +21,7 @@ function readUser($id=null) {
     echo "Exception: " . $e->getMessage();
   }
 }
+
+function deleteUser($id) {
+  echo "chamou";
+}

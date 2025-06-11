@@ -1,0 +1,22 @@
+div.userCard {
+  border-color: gray;
+  border-width: 2px;
+  border-style: solid;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin-top: 3px;
+}
+
+div.userInfo {
+  padding-right: 15px;
+}
+
+div.actionButtons {
+  min-width: 14%;
+  display: flex;
+  justify-content: space-between;
+}
