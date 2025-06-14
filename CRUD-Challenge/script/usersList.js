@@ -8,7 +8,7 @@ let deleteUser = (id) => {
   })
   .then(response => response.text())
   .then(data => {
-    alert(data); // ou atualize a tabela
     location.reload();
+    alert(data);
   });
 }

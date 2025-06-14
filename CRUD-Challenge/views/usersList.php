@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/usersList.css">
+  <link rel="stylesheet" href="../style/editPopUp.css">
   <script src="../script/usersList.js"></script>
   <title>Document</title>
   <?php 
@@ -12,6 +13,9 @@
   ?>
 </head>
 <body>
+  <?php 
+    include_once "../views/editPopUp.php";
+  ?>
   <h1>Usuários</h1>
   <div class="userCardList">
     <?php foreach($usersList as $i): ?>

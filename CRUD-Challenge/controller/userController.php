@@ -23,5 +23,11 @@ function readUser($id=null) {
 }
 
 function deleteUser($id) {
-  echo "chamou";
+  try {
+    $GLOBALS['dataBase']->delete($id);
+  } catch(mysqli_sql_exception $e) {
+    echo "Exception: " . $e->getMessage();
+    exit;
+  }
+  echo "User Deleted Successfully";
 }
