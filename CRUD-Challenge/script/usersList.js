@@ -12,3 +12,15 @@ let deleteUser = (id) => {
     alert(data);
   });
 }
+
+let updateUser = (id, name, email, pass) => {
+  document.getElementById("popup").classList.remove("hidden");
+  document.getElementById("EditUserId").value = id;
+  document.getElementById("EditName").value = name;
+  document.getElementById("EditEmail").value = email;
+  document.getElementById("EditPass").value = pass;
+}
+
+let closeUpdateWindow = () => {
+  document.getElementById("popup").classList.add("hidden");
+}

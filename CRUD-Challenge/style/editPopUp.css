@@ -1,6 +1,32 @@
-div.popupBD {
-  position: fixed;
-  width: 100vw;
+div.popUpBD {
   height: 100vh;
-  background-color: gray;
+  width: 100vw;
+  background-color: rgba(0, 0, 0,0.55);
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.hidden {
+  display: none !important;
+}
+
+div.editInfoBox {
+  width: 70%;
+  height: 30%;
+  border-radius: 8px;
+  background-color: white;
+  text-align: center;
+}
+
+button.closeBTN {
+  background-color: red;
+  border-radius: 8px;
+  color: white;
+  font-weight: bolder;
+  border-width: 1px;
+  top: 0;
+  float: right;
 }

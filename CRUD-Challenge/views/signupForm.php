@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sing Up</title>
+<div>
   <?php
-    if($_POST) {
+    if($_POST && key_exists("action", $_POST) && $_POST['action'] === "Create") {
       include_once "../controller/userController.php"; 
-      createUser();
+      createUser($_POST['name'], $_POST['email'], (key_exists('keepConnected', $_POST)? $_POST['keepConnected']:false), $_POST['pass']);
     }
   ?>
-</head>
-<body>
   <h1>Sing Up</h1>
   <form action="" method="post">
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" require>
+    <input type="text" name="name" id="CrateName" require>
     <label for="email">Email</label>
-    <input type="email" name="email" id="email" require>
+    <input type="email" name="email" id="CrateEmail" require>
     <label for="keepConnected">Keep Connected</label>
-    <input type="checkbox" name="keepConnected" id="keepConnected">
+    <input type="checkbox" name="keepConnected" id="CrateKeepConnected">
     <label for="pass">Password</label>
-    <input type="password" name="pass" id="pass" require>
+    <input type="password" name="pass" id="CratePass" require>
+    <input type="hidden" name="action" value="Create">
     <input type="submit" value="Submit">
   </form>
-</body>
-</html>
+</div>

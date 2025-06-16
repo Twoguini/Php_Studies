@@ -20,7 +20,7 @@ class UserModel {
     } else return $this->db->query("SELECT * FROM users");
   }
 
-  public function update($id, $name=null, $email=null, $keepConnected=null, $password=null) {
+  public function update($id, $name=null, $email=null, $keepConnected, $password=null) {
     $columnsSelectionArr = [];
     $columnValueDefArr = [];
 
@@ -31,14 +31,13 @@ class UserModel {
     }if(!is_null($password)) {
       $columnsSelectionArr[] = "password";
     }if(!is_null($keepConnected)) {
-      $keepConnected = (int)$keepConnected;
+      $keepConnected = (int)(($keepConnected === "on")? true : false);
       $columnsSelectionArr[] = "keepConnected";
     }
 
     foreach($columnsSelectionArr as $column) {
       $columnValueDefArr[] = "$column = ". "'".$$column ."'";
     }
-    echo "UPDATE users SET ". implode(", ", $columnValueDefArr) ." WHERE id=$id";
 
     $this->db->query("UPDATE users SET ". implode(", ", $columnValueDefArr) ." WHERE id=$id");
   }
